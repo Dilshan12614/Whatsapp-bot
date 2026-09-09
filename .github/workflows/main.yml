@@ -2,6 +2,9 @@ name: DILA-MD Bot
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   bot:
@@ -20,12 +23,18 @@ jobs:
         run: npm install
 
       - name: Check environment
+        env:
+          SESSION_ID: ${{ secrets.SESSION_ID }}
         run: |
           node --version
           npm --version
-          test -n "$SESSION_ID" && echo "SESSION_ID is set" || echo "SESSION_ID is missing"
-        env:
-          SESSION_ID: ${{ secrets.SESSION_ID }}
+
+          if [ -z "$SESSION_ID" ]; then
+            echo "SESSION_ID is missing"
+            exit 1
+          else
+            echo "SESSION_ID is set"
+          fi
 
       - name: Start Bot
         env:
