@@ -3,7 +3,7 @@ const {
   useMultiFileAuthState,
   fetchLatestBaileysVersion,
   DisconnectReason
-} = require("@whiskeysockets/baileys");
+} = require('baileys-pro');
 
 const pino = require("pino");
 const config = require("./config");
