@@ -7,7 +7,7 @@ const MODE = "public";
 const AUTO_READ = false;
 const AUTO_TYPING = false;
 
-const SESSION_ID = process.env.SESSION_ID || "";
+const SESSION_ID = process.env.SESSION_ID || "EMdAxT6Q#gbiSDhgWY-Zt-Xz0mos9DGL3u4Yn6o5HCVlokheppxk";
 
 module.exports = {
   PREFIX,
